@@ -1,0 +1,11 @@
+{
+  "name": "SlackMinecraft",
+  "version": "0.0.1",
+  "description": "A node app to administer your minecraft server remotely",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rhett Rogers",
+  "license": "ISC"
+}
