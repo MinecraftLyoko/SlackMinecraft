@@ -2,10 +2,15 @@
   "name": "SlackMinecraft",
   "version": "0.0.1",
   "description": "A node app to administer your minecraft server remotely",
-  "main": "index.js",
+  "main": "app.coffee",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Rhett Rogers",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "coffee-script": "^1.8.0",
+    "dependable": "^0.2.5",
+    "express": "^4.10.4"
+  }
 }
