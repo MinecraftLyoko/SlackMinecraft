@@ -1,0 +1,5 @@
+[08:12:31] [Server Watchdog/FATAL]: A single server tick took 41460.18 seconds (should be max 0.05)
+[08:12:32] [Server Watchdog/FATAL]: Considering it to be crashed, server will forcibly shutdown.
+[08:12:31] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 41460816ms behind, skipping 829216 tick(s)
+[08:12:33] [Server Watchdog/ERROR]: This crash report has been saved to: /Users/rrogers/Developer/SlackMinecraft/server/./crash-reports/crash-2014-12-02_08.12.33-server.txt
+[08:12:33] [Server Shutdown Thread/INFO]: Stopping server

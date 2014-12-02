@@ -11,6 +11,8 @@
   "dependencies": {
     "coffee-script": "^1.8.0",
     "dependable": "^0.2.5",
-    "express": "^4.10.4"
+    "express": "^4.10.4",
+    "request": "^2.49.0",
+    "underscore": "^1.7.0"
   }
 }
