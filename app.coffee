@@ -11,7 +11,7 @@ config.resolve (setup, minecraft, minecraftJarUrl, serverDir) ->
       minecraft.initServer (error, exit) ->
         console.log error
     else
-      console.log error
+      console.log "error", error
 
 
   # console.log __dirname, serverDir

@@ -48,10 +48,11 @@ module.exports = (rootDir, serverDir, minecraftVer, minecraftJarUrl) ->
     # setupServer if _.indexOf files, "server" is -1
   
   (callback) ->
-    checkJava (error) ->
-      return callback error if error
-      setupServer true, ->
-        downloadFile minecraftJarUrl, (error) ->
-          return callback error if error
-          writeEULA (error) ->
-            callback error
+    #checkJava (error) ->
+     # return callback "javacheck-error:#{error}" if error
+    setupServer true, ->
+      downloadFile minecraftJarUrl, (error) ->
+        return callback "downloadFile-error: #{error}" if error
+        writeEULA (error) ->
+          return callback "eulaFile-error: #{error}" if error
+          callback()
