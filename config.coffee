@@ -2,7 +2,6 @@
 shell = require "shelljs/global"
 shell.silent = true
 
-
 _ = require "underscore"
 
 rootDir = pwd()
@@ -20,9 +19,10 @@ slack = {
 
 deps.register "slack", slack
 
+deps.register "PORT", 25566
 deps.register "setup", require "./setup"  
 deps.register "minecraft", require "./minecraft"
-
+deps.register "Command", require "./Command"
 
 
 module.exports = deps
