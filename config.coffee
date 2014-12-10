@@ -14,7 +14,7 @@ deps.register "minecraftVer", minecraftVer
 deps.register "minecraftJarUrl", "https://s3.amazonaws.com/Minecraft.Download/versions/#{minecraftVer}/minecraft_server.#{minecraftVer}.jar"
 
 slack = {
-  serverAdminUrl: "https://hooks.slack.com/services/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"
+  serverAdminUrl: "https://hooks.slack.com/services/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"
 }
 
 deps.register "slack", slack
