@@ -4,7 +4,6 @@ module.exports = ->
 
     constructor: (logString) ->
       pattern = /\[+[^\]]+\]+:?/g
-      console.log "Original: #{logString}"
       splitter = logString.match pattern
 
       
@@ -13,7 +12,6 @@ module.exports = ->
       @time = splitter[0]
       @category = splitter[1]
       @message = logString
-      console.log "FIX time:#{@time}, category#{@category}, message: #{@message}"
 
 
     toString: ->
