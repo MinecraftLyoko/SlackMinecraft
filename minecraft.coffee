@@ -1,7 +1,7 @@
 request = require "request"
 child = require "child_process"
 
-module.exports = (rootDir, serverDir, minecraftVer, slack) ->
+module.exports = (rootDir, serverDir, minecraftVer, slack, ServerLog) ->
   obj = {
     process: null
     started: false
@@ -14,8 +14,9 @@ module.exports = (rootDir, serverDir, minecraftVer, slack) ->
     
 
     obj.process.stdio[1].on "data", (response) ->
-      # response = response.split("/INFO]: ")[1]
-      console.log response.toString()
+      log = new ServerLog(response.toString())
+      
+
       options = 
         url: slack.serverAdminUrl
         method: "POST"
@@ -23,12 +24,8 @@ module.exports = (rootDir, serverDir, minecraftVer, slack) ->
         headers: 
           "Content-Type": "application/json"
         body: 
-          text: response
+          text: log.toString()
 
-      # request options, (error, response, body) ->
-      #   console.log error, body if error
+      request options, (error, response, body) ->
+        console.log error, body if error
   obj
-  # {
-  #   initServer
-  #   process
-  # }
