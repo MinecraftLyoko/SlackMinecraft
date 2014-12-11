@@ -9,6 +9,7 @@
   "author": "Rhett Rogers",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.10.0",
     "coffee-script": "^1.8.0",
     "dependable": "^0.2.5",
     "express": "^4.10.4",

@@ -58,10 +58,10 @@ module.exports = (minecraft) ->
 
 
   obj.tellraw = (player, jsonMessage, callback) ->
-    return callback "Error: missing params" if not tellraw or not jsonMessage
+    return callback "Error: missing params" if not player or not jsonMessage
     args = []
     args.push player
-    args.push jsonMessage
+    args.push JSON.stringify jsonMessage
 
     obj.sendCommand "tellraw", args, callback
 

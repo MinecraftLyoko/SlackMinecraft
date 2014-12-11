@@ -1,11 +1,13 @@
 config = require "./config"
 express = require "express"
+bodyParser = require "body-parser"
 app = express()
 stdin = process.openStdin()
 
 
 config.resolve (setup, minecraft, Command, minecraftJarUrl, serverDir, PORT) ->
 
+  app.use bodyParser()
 
   app.get "/test", (req, res, next) ->
     Command.achievement "give", "*", "SerenadeX", ->
@@ -20,6 +22,11 @@ config.resolve (setup, minecraft, Command, minecraftJarUrl, serverDir, PORT) ->
     res.sendStatus 200
   
 
+  app.post "/inchat", (req, res, next) ->
+    return res.sendStatus 200 if req.body.user_name is "slackbot"
+
+    Command.tellraw "@a", {text: "<#{req.body.user_name}> #{req.body.text}"}, ->
+      res.sendStatus 200
 
   startme = ->
     setup (error) ->
