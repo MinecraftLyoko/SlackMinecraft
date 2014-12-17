@@ -52,6 +52,11 @@ module.exports = (minecraft) ->
 
     obj.sendCommand "clear", args, callback
 
+  obj.list = (callback) ->
+    return if not callback
+    obj.sendCommand "list", [], callback
+
+
   obj.stop = (callback) ->
     console.log "Shutting down server"
     obj.sendCommand "stop", [], callback
