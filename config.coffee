@@ -5,9 +5,9 @@ shell.silent = true
 _ = require "underscore"
 
 rootDir = pwd()
-minecraftVer = "1.8.1"
+minecraftVer = "1.8.8"
 
-deps = new container() 
+deps = new container()
 deps.register "rootDir", rootDir
 deps.register "serverDir", "#{rootDir}/server"
 deps.register "minecraftVer", minecraftVer
@@ -17,7 +17,7 @@ deps.register "slack", require './slackConfig'
 
 deps.register "PORT", 25566
 deps.register "ServerLog", require "./ServerLog"
-deps.register "setup", require "./setup"  
+deps.register "setup", require "./setup"
 deps.register "minecraft", require "./minecraft"
 deps.register "Command", require "./Command"
 

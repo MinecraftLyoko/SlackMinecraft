@@ -5,7 +5,7 @@ app = express()
 stdin = process.openStdin()
 
 
-config.resolve (setup, minecraft, Command, minecraftJarUrl, serverDir, PORT) ->
+config.resolve (setup, minecraft, Command, minecraftJarUrl, serverDir, PORT, slack) ->
 
   app.use bodyParser()
 
@@ -24,7 +24,9 @@ config.resolve (setup, minecraft, Command, minecraftJarUrl, serverDir, PORT) ->
 
   app.post "/inchat", (req, res, next) ->
     return res.sendStatus 200 if req.body.user_name is "slackbot"
-
+    if req.body.token isnt slack.inChatPostToken
+      return res.sendStatus 403
+    
     Command.tellraw "@a", {text: "<#{req.body.user_name}> #{req.body.text}"}, ->
       res.sendStatus 200
 
