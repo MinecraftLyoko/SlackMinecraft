@@ -16,10 +16,8 @@ deps.register "minecraftJarUrl", "https://s3.amazonaws.com/Minecraft.Download/ve
 deps.register "slack", require './slackConfig'
 
 deps.register "PORT", 25566
-deps.register "ServerLog", require "./ServerLog"
-deps.register "setup", require "./setup"
-deps.register "minecraft", require "./minecraft"
-deps.register "Command", require "./Command"
+
+deps.load "#{__dirname}/minecraft"
 
 
 module.exports = deps
